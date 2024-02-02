@@ -19,16 +19,7 @@ export const Eventpage = () => {
   const eventDetails = useFetch(
     `https://api.mediehuset.net/mediesuset/events/${eventID}`
   );
-  /*   const daysInWeek = [
-    "Mandag",
-    "Tirsdag",
-    "Onsdag",
-    "Torsdag",
-    "Fredag",
-    "Lørdag",
-    "Søndag",
-  ];
- */
+
   const handleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
@@ -37,8 +28,6 @@ export const Eventpage = () => {
     handleModal();
     setEventID(id);
   };
-
-  console.log(events);
 
   return (
     <>

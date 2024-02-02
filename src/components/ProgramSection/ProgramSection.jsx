@@ -5,8 +5,6 @@ import style from "./ProgramSection.module.scss";
 import { IoClose } from "react-icons/io5";
 
 export const ProgramSection = ({ programData, day, deleteProgram }) => {
-  console.log(programData);
-
   return (
     <>
       {programData?.map((program) => {

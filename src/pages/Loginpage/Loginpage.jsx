@@ -8,6 +8,8 @@ export function Loginpage() {
 
   const { setUserData, userData } = useContext(UserContext);
 
+  // Sign up function that creates a body from the input values and
+  // sends these to the backend server. Then sets the response in the context userData
   async function handleSignUp(event) {
     event.preventDefault();
 
@@ -28,9 +30,6 @@ export function Loginpage() {
     body.append("username", event.target.username.value);
     body.append("password", event.target.password.value);
 
-    // Vi kan gemme det i localstorage -
-    // Vi kan lave en context
-
     let options = {
       method: "POST",
       body: body,
@@ -39,7 +38,6 @@ export function Loginpage() {
     try {
       let res = await fetch(url, options);
       let data = await res.json();
-      console.log(data);
       if (data?.status === "Ok") {
         setUserData(data);
         setMessage(`Du er nu logget ind som ${data.user.firstname}`);
@@ -47,7 +45,7 @@ export function Loginpage() {
         setMessage("Der opstod en fejl - prøv igen");
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   }
 

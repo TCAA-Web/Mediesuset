@@ -24,6 +24,12 @@
   p {
     font-size: 1.4rem;
     padding: 8px;
+    @media only screen and (max-width: 1467px) {
+      font-size: 1.1rem;
+    }
+    @media only screen and (max-width: 967px) {
+      font-size: 1.1rem;
+    }
   }
 
   a {
@@ -36,6 +42,18 @@
     font-size: 1.4rem;
     color: white;
     cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media only screen and (max-width: 1467px) {
+      font-size: 1.1rem;
+      width: 80%;
+    }
+    @media only screen and (max-width: 967px) {
+      font-size: 1.1rem;
+      width: 90%;
+    }
   }
 }
 

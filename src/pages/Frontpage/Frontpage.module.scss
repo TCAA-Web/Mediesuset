@@ -1,9 +1,12 @@
 .newsCardWrapper {
   display: grid;
-  width: 90%;
+  width: 70%;
   margin: auto;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5vh;
 }
 
 .newsDetailsWrapper {
@@ -14,5 +17,9 @@
 
   img {
     width: 100%;
+  }
+  h4 {
+    font-size: 1.4rem;
+    padding-bottom: 8px;
   }
 }

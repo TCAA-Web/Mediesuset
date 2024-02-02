@@ -11,6 +11,7 @@ export const EventCard = ({
   eventID,
   token,
 }) => {
+  // Function to add new event to the users event list
   const addToUserProgram = () => {
     let url = "https://api.mediehuset.net/mediesuset/programme";
     let body = new URLSearchParams();
@@ -27,8 +28,8 @@ export const EventCard = ({
 
     fetch(url, options)
       .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err));
+      .then((data) => console.error(data))
+      .catch((err) => console.error(err));
   };
 
   return (

@@ -4,6 +4,7 @@ import { Title } from "../../components/Title/Title";
 import { Modal } from "../../components/Modal/Modal";
 import style from "./Frontpage.module.scss";
 import { useFetch } from "../../hooks/useFetch";
+import { getDayFromDate } from "../../helpers/getDayFromDate";
 
 export const Frontpage = () => {
   // Modal state (open/closed)
@@ -49,7 +50,13 @@ export const Frontpage = () => {
             <p>{newsDetails?.item.teaser}</p>
             <p>{newsDetails?.item.author}</p>
           </figcaption>
-          <p>{new Date(newsDetails?.item.datetime * 1000).toString()}</p>
+          <p>
+            {getDayFromDate(
+              new Date(newsDetails?.item.datetime * 1000).toString()
+            )}
+            {" d. "}
+            {new Date(newsDetails?.item.datetime * 1000).toLocaleDateString()}
+          </p>
         </figure>
       </Modal>
     </>

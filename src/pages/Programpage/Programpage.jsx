@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
-import { useFetch } from "../../hooks/useFetch";
-import { UserContext } from "../../context/UserContext";
 import { ProgramSection } from "../../components/ProgramSection/ProgramSection";
-import style from "./Programpage.module.scss";
+import { UserContext } from "../../context/UserContext";
 import { removeDublicates } from "../../helpers/removeDublicates";
+import { useFetch } from "../../hooks/useFetch";
+import style from "./Programpage.module.scss";
 
 export const Programpage = () => {
   const { userData } = useContext(UserContext);
@@ -17,6 +17,7 @@ export const Programpage = () => {
     message
   );
 
+  // function to delete a user selected program by its ID
   const deleteProgram = (id) => {
     let url = `https://api.mediehuset.net/mediesuset/programme/${id}`;
     let options = {
@@ -32,6 +33,7 @@ export const Programpage = () => {
       .catch((err) => console.log(err));
   };
 
+  // Effect that "cleans" the array of double entries before rendering it out
   useEffect(() => {
     if (rawProgramData && rawProgramData.items) {
       let clean = removeDublicates(rawProgramData?.items, "event_title");

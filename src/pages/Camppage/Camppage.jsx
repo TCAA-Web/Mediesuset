@@ -9,10 +9,14 @@ import { Modal } from "../../components/Modal/Modal";
 export const Camppage = () => {
   const [isModalOpen, setIsModalOpen] = useState();
   const [selectedCamp, setSelectedCamp] = useState(1);
+
   const camps = useFetch("https://api.mediehuset.net/mediesuset/camps");
   const singleCamp = useFetch(
     `https://api.mediehuset.net/mediesuset/camps/${selectedCamp}`
   );
+
+  // This function switches the setIsOpenModal state from true to false and
+  // sets the selected camp by ID or string
   const handleModal = (id) => {
     if (typeof id === "string" || typeof id === "number") {
       setSelectedCamp(id);
@@ -20,7 +24,6 @@ export const Camppage = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  console.log(singleCamp);
   return (
     <>
       <Title title={"Camps"} />

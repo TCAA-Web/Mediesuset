@@ -29,22 +29,28 @@ export const TicketCheckoutpage = () => {
 
   const onSubmit = (data) => submitForm(data);
 
+  // Effect that runs when ticketDetails changes (e.g when fetched) and
+  // sets the total price to its amount
   useEffect(() => {
     if (ticketDetails?.item) {
       setTotalPrice(ticketDetails.item.price);
     }
   }, [ticketDetails]);
 
+  // Small handler function to update total price and amount
   const handleTicketAmount = (e) => {
     setTotalPrice(() => e.target.value * ticketDetails?.item?.price + ".00");
     setAmount(e.target.value);
   };
 
+  // Small handler function to set ticket checkout flow to completed
   const handleComplete = () => {
     setMessage("Du har nu bestilt en billet");
     setIsComplete(true);
   };
 
+  // Function to submit the ticket request to the backend
+  // takes in the entire form and sends it in a POST request
   const submitForm = (data) => {
     let url = `https://api.mediehuset.net/mediesuset/usertickets`;
     let body = new URLSearchParams();
@@ -75,10 +81,8 @@ export const TicketCheckoutpage = () => {
           ? handleComplete()
           : setMessage("Noget gik galt - Prøv igen")
       )
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   };
-
-  console.log("Amount", amount);
 
   return (
     <>

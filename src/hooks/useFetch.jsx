@@ -16,7 +16,7 @@ export const useFetch = (url, auth = null, shouldRefetch) => {
     fetch(url, options)
       .then((res) => res.json())
       .then((data) => setData(data))
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   }, [url, shouldRefetch]);
 
   return data;

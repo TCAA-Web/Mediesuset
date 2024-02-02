@@ -1,5 +1,5 @@
 .checkoutContainer {
-  width: 90%;
+  width: 70%;
   margin: auto;
   margin-bottom: 5vh;
 
@@ -20,6 +20,13 @@
     height: 70px;
     padding: 8px;
     align-items: center;
+
+    @media only screen and (max-width: 1467px) {
+      grid-template-columns: 1fr 1fr;
+      padding: 2px;
+      font-size: 1rem;
+    }
+
     input {
       border: none;
       font-size: 1.2rem;
@@ -59,6 +66,9 @@
     margin-bottom: 5vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    @media only screen and (max-width: 967px) {
+      grid-template-columns: 1fr;
+    }
     gap: 16px;
     .leftContainer {
       display: grid;
@@ -94,6 +104,13 @@
     select {
       width: 63%;
       height: 42px;
+    }
+
+    @media only screen and (max-width: 967px) {
+      select,
+      input {
+        width: 100%;
+      }
     }
 
     input[type="submit"] {

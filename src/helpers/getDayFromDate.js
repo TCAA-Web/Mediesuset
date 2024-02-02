@@ -11,7 +11,6 @@ const daysInWeek = [
 export const getDayFromDate = (date) => {
   let _date = new Date(date);
   let day = _date.getDay();
-  let daystring = daysInWeek[day];
-  console.log("DAY: ", daystring);
+  let daystring = daysInWeek[day - 1];
   return daystring;
 };
