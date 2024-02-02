@@ -12,5 +12,9 @@ npm install
 ```
 4. Skriv herefter:
 ```
+cd app
+```
+5. Skriv herefter:
+```
 npm run dev
 ```
