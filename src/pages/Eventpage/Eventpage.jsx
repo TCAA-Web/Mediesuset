@@ -19,7 +19,7 @@ export const Eventpage = () => {
   const eventDetails = useFetch(
     `https://api.mediehuset.net/mediesuset/events/${eventID}`
   );
-  const daysInWeek = [
+  /*   const daysInWeek = [
     "Mandag",
     "Tirsdag",
     "Onsdag",
@@ -28,7 +28,7 @@ export const Eventpage = () => {
     "Lørdag",
     "Søndag",
   ];
-
+ */
   const handleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
@@ -57,9 +57,9 @@ export const Eventpage = () => {
                   setEventID={() => handleEventID(item.id)}
                   eventID={item.id}
                   token={userData ? userData.access_token : null}
-                  date={`${
-                    daysInWeek[getDayFromDate(item.local_time)]
-                  } kl. ${item.local_time.substring(11, 16)}`}
+                  date={`${getDayFromDate(
+                    item.local_time
+                  )} kl. ${item.local_time.substring(11, 16)}`}
                   stageColor={getEventColor(item.stage_id)}
                 />
               );
@@ -77,7 +77,7 @@ export const Eventpage = () => {
             }}
           >
             {eventDetails?.item?.stage_name}{" "}
-            {daysInWeek[getDayFromDate(eventDetails?.item?.local_time)]} kl.{" "}
+            {getDayFromDate(eventDetails?.item?.local_time)} kl.{" "}
             {eventDetails?.item?.local_time.substring(11, 16)}
           </h3>
           <div>

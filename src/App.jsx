@@ -7,6 +7,7 @@ import { Ticketpage } from "./pages/Ticketpage/Ticketpage";
 import { Loginpage } from "./pages/Loginpage/Loginpage";
 import { TicketCheckoutpage } from "./pages/TicketCheckoutpage/TicketCheckoutpage";
 import { MainLayout } from "./layout/MainLayout";
+import { Programpage } from "./pages/Programpage/Programpage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               path="/billetter/checkout/:id"
               element={<TicketCheckoutpage />}
             />
+            <Route path="/program" element={<Programpage />} />
             <Route path="/login" element={<Loginpage />} />
           </Route>
         </Routes>

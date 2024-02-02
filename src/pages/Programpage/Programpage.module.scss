@@ -1,0 +1,18 @@
+.programContainer {
+  display: grid;
+  width: 80%;
+  margin: auto;
+}
+.darkHeading {
+  display: grid;
+  align-items: center;
+  justify-content: start;
+  background-color: #333;
+  height: 70px;
+  color: white;
+  margin-top: 5vh;
+  p {
+    font-size: 1.4rem;
+    padding: 8px;
+  }
+}

@@ -1,10 +1,19 @@
 import { useEffect, useState } from "react";
 
-export const useFetch = (url) => {
+export const useFetch = (url, auth = null) => {
   const [data, setData] = useState();
 
   useEffect(() => {
-    fetch(url)
+    let options = {};
+    if (auth) {
+      options = {
+        method: "GET",
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      };
+    }
+    fetch(url, options)
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));

@@ -45,7 +45,7 @@ export const Navbar = () => {
             </li>
             <div className={style.dropDownContent}>
               <li>
-                <NavLink to="/">MIT PROGRAM</NavLink>
+                <NavLink to="/program">MIT PROGRAM</NavLink>
               </li>
               <li>
                 <NavLink onClick={() => logout()}>LOG UD</NavLink>
