@@ -1,7 +1,26 @@
 .programSectionStyle {
   display: grid;
   grid-template-columns: 1fr 8fr 1fr;
-  height: 3vh;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.55);
+  p {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    font-size: 1.4rem;
+  }
+  p:nth-child(1) {
+    justify-content: center;
+  }
+  p:nth-child(2) {
+    margin-left: 32px;
+  }
+  svg {
+    width: 48px;
+    height: 48px;
+    margin: auto;
+    cursor: pointer;
+  }
 }
